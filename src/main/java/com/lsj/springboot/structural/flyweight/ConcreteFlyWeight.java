@@ -6,6 +6,11 @@ package com.lsj.springboot.structural.flyweight;
  */
 public class ConcreteFlyWeight extends AbstractFlyWeight {
 
+    public ConcreteFlyWeight(String intrinsic){
+        super();
+        super.intrinsic = intrinsic;
+    }
+
     @Override
     public void operate(String extrinsic) {
         System.out.println(extrinsic + "askjdhadd");

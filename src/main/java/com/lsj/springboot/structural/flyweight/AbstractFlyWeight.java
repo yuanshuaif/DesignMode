@@ -8,7 +8,7 @@ public abstract class AbstractFlyWeight {
 
     //1.0
     /*内部状态：不随外部环境而改变，在享元对象间共享*/
-    private String intrinsic;
+    protected String intrinsic;
 
     public String getIntrinsic() {
         return intrinsic;

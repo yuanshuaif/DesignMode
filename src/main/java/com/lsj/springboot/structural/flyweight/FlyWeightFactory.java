@@ -12,6 +12,7 @@ public class FlyWeightFactory {
     /*享元数据存储的map*/
     private static Map<String, AbstractFlyWeight> map = new HashMap<>();
 
+    // 使用内部状态作为hashMap的key，用来标识是一个对象
     public static AbstractFlyWeight getFlyWeight(String key){
         AbstractFlyWeight abstractFlyWeight = null;
         if(map.containsKey(key)){
@@ -19,7 +20,7 @@ public class FlyWeightFactory {
             abstractFlyWeight = map.get(key);
         }else{
             System.out.print("创建 " + key + " 并从池中取出---->");
-            abstractFlyWeight = new ConcreteFlyWeight();
+            abstractFlyWeight = new ConcreteFlyWeight(key);
             map.put(key, abstractFlyWeight);
         }
         return abstractFlyWeight;
